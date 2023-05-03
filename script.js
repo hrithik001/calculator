@@ -17,6 +17,24 @@ buttons.forEach((items) =>
 {
     items.onclick = () =>
     {
-        screen.innerHtml+=items.id;
+        
+       if(items.id==="clear")
+       {
+        screen.innerHTML="";
+       }
+       else if(items.id==="backspace")
+       {
+        var str=screen.innerText;
+        
+
+            screen.innerHTML=str.substring(0,str.length-1);
+       }
+       else if(items.id=="equal")
+       {
+            screen.innerHTML=eval(screen.innerText);
+       }
+       else
+        screen.innerHTML+=items.id;
+        
     }
 })
